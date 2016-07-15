@@ -1,0 +1,25 @@
+var path = require('path');
+var webpack = require('webpack');
+
+module.exports = {
+  entry: [
+    './src/js/index.js'
+  ],
+  output: {
+    path: path.join(__dirname, 'src/.tmp'),
+    filename: 'template.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          cacheDirectory: true,
+          presets: ['es2015']
+        }
+      }
+    ]
+  }
+};

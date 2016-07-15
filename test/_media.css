@@ -1,0 +1,48 @@
+/*
+@styleguide
+@title media object
+
+```html
+<div class="media">
+  <img class="media__img" src="[img url]" alt="[alt text]">
+  <div class="media__body">
+    <h2>[Title]</h2>
+    <p>[Summary]</p>
+  </div>
+</div>
+```
+
+<div class="psg-resizable" data-style="html, body { padding: 0; margin: 0; background: white }">
+  <div class="media">
+    <img class="media__img" src="http://placehold.it/64x64" alt="#">
+    <div class="media__body">
+      <h2>Lorem ipsum</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, voluptatibus minus necessitatibus veritatis itaque magnam</p>
+    </div>
+  </div>
+</div>
+
+*/
+.media {
+  overflow: hidden;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .media {
+    font-size: 1rem;
+  }
+}
+
+.media__img {
+  margin: 0 10px 0 0;
+  float: left;
+}
+
+.media__img--right {
+  float: right;
+}
+
+.media__body {
+  overflow: hidden;
+}

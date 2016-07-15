@@ -1,0 +1,67 @@
+- var namespace = "psg"
+doctype html
+html(lang='es')
+  head
+    meta(charset='utf-8')
+    title <%= projectName %>
+    style <%- codeStyle %>
+    style <%- tmplStyle %>
+    style#processedcss <%- processedCSS %>
+    script
+      include .tmp/template.js
+
+  body
+
+    input#psg-IsMenuHidden(type="checkbox", checked)
+    .psg-Header
+      h1.psg-Header-heading
+        a(href="#top", title="back to top") <%= projectName %>
+      label.psg-MenuButton(for="psg-IsMenuHidden") menu
+      label.psg-hideMenu(for="psg-IsMenuHidden") hide menu
+    nav.psg-Menu
+      a.psg-Logo.psg-Menu-header
+        img.psg-Logo-pic(src="http://postcss.github.io/postcss/logo.svg", alt="Philosopher’s stone, logo of PostCSS")
+      ul.psg-Menu-itemgroup
+        ='\n'
+        |<% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
+        li.psg-Menu-item
+          a(href="#color-palette", onclick="document.getElementById('psg-IsMenuHidden').click()").psg-Menu-link Color Palette
+        ='\n'
+        |<% } %>
+        |<% maps.forEach(function (map) { %>
+        |  <% if (map.link.title !== null) { %>
+        li.psg-Menu-item
+          a(href!="#<%= map.link.id %>", onclick="document.getElementById('psg-IsMenuHidden').click()").psg-Menu-link <%= map.link.title %>
+        ='\n'
+        |  <% } %>
+        |<% }) %>
+      ='\n'
+    main.psg-main
+      div#top
+      |<% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
+      section.psg-Component
+        h2.psg-Component-title#color-palette Color Palette
+        ul.psg-Component-content.psg-Component-content--colorPalette
+          ='\n'
+          |<% colorPalette.forEach(function (palette) { %>
+          li.psg-Color
+            code.psg-Color-code(style!="color: <%= palette.color %>")
+              |<%= palette.color %>
+            data.psg-Color-name(value!="<%= palette.color %>")
+              |<%= palette.name %>
+          ='\n'
+          |<% }) %>
+      ='\n'
+      |<% } %>
+      ='\n'
+      |<% maps.forEach(function (map) { %>
+      |<% if (map.link.title !== null) { %>
+      section.psg-Component
+        h2.psg-Component-title(id!="<%= map.link.id %>") <%= map.link.title %>
+        .psg-Component-content <%- map.html %>
+      |<% } else { %>
+      section.psg-Component.psg-Component--secondary
+        .psg-Component-content <%- map.html %>
+      |<% } %>
+      |<% }) %>
+

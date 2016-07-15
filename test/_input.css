@@ -1,0 +1,120 @@
+/*
+@styleguide
+
+@title input base
+
+Base style for `input` form controls.
+
+<input type="text" class="input" placeholder="write whatever you want">
+*/
+
+.input {
+  border-color: black;
+  padding: .3em .6em;
+  font-size: 1.1rem;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+/*
+@styleguide
+
+@title input date modifier
+
+```
+<input type="date" class="input input--date">
+```
+
+<div class="psg-resizable">
+  <input type="date" class="input input--date">
+</div>
+*/
+.input--date {
+  color: blue;
+}
+
+@media (max-width: 40em) {
+  .input--date {
+    width: 100%;
+  }
+}
+
+/*
+@styleguide
+
+@title input email modifier
+
+<input type="email" class="input input--email">
+*/
+.input--email {}
+
+/*
+@styleguide
+
+@title input color modifier
+
+<input type="color" class="input input--color">
+*/
+.input--color {
+  padding: unset;
+}
+
+/*
+@styleguide
+
+@title input range modifier
+
+<input type="range" class="input input--range" min="0" max="10" value="5" step="1">
+*/
+.input--range {}
+
+/*
+@doc
+
+### secondary info
+
+# Quae in controversiam veniunt, de iis, si placet, disseramus.
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ALIO MODO. Bonum liberi: misera orbitas. Ita prorsus, inquam; Sed ille, ut dixi, vitiose. Audeo dicere, inquit. </p>
+
+<p>Duo Reges: constructio interrete. Non igitur bene. Eadem fortitudinis ratio reperietur. Quid Zeno? Ita credo. Invidiosum nomen est, infame, suspectum. </p>
+
+<ol>
+  <li>Quid, de quo nulla dissensio est?</li>
+  <li>Hanc ergo intuens debet institutum illud quasi signum absolvere.</li>
+  <li>Quis animo aequo videt eum, quem inpure ac flagitiose putet vivere?</li>
+  <li>Non enim, si omnia non sequebatur, idcirco non erat ortus illinc.</li>
+</ol>
+
+
+<ul>
+  <li>Tum mihi Piso: Quid ergo?</li>
+  <li>Haec para/doca illi, nos admirabilia dicamus.</li>
+  <li>Nunc haec primum fortasse audientis servire debemus.</li>
+  <li>Quid turpius quam sapientis vitam ex insipientium sermone pendere?</li>
+</ul>
+
+
+<p>Quare attende, quaeso. Quid Zeno? Quid ergo hoc loco intellegit honestum? </p>
+
+<pre>
+Incommoda autem et commoda-ita enim estmata et dustmata
+appello-communia esse voluerunt, paria noluerunt.
+
+Quae in controversiam veniunt, de iis, si placet,
+disseramus.
+</pre>
+
+
+<h2>Invidiosum nomen est, infame, suspectum.</h2>
+
+<p>Falli igitur possumus. Iam id ipsum absurdum, maximum malum neglegi. At enim sequor utilitatem. Bestiarum vero nullum iudicium puto. Estne, quaeso, inquam, sitienti in bibendo voluptas? Tubulo putas dicere? Tuo vero id quidem, inquam, arbitratu. </p>
+
+<h3>Plane idem, inquit, et maxima quidem, qua fieri nulla maior potest.</h3>
+
+<p>Bonum incolumis acies: misera caecitas. Cur post Tarentum ad Archytam? </p>
+
+*/
+.form {}
