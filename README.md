@@ -1,13 +1,11 @@
-# psg-theme-aqua
+# psg-theme-greek-fire
 
 TODO: Please write description.
 
 ## Theme
 
-TODO: Please add a capture image.
-
-![Image of psg-theme-aqua](https://octodex.github.com/images/yaktocat.png)
+![Image of psg-theme-aqua](./screenshot.png)
 
 ## License
 
-MIT © bar
+MIT © 2016 David Marchena
