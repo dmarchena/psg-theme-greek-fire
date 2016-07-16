@@ -107,7 +107,7 @@
 	  styleSelector: '#processedcss'
 	};
 	(0, _ready2.default)(function () {
-	  [].slice.call(document.querySelectorAll('.psg-device-test')).map(function (sample) {
+	  [].slice.call(document.querySelectorAll('.gf-device-test')).map(function (sample) {
 	    var opts = options;
 	    if (sample.getAttribute('data-style') !== null) {
 	      opts = Object.assign({}, opts, { style: sample.getAttribute('data-style') });
@@ -7973,7 +7973,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var classNameBase = 'psg-ResponsiveSample';
+	var classNameBase = 'gf-ResponsiveSample';
 	var classNameStateSelected = 'is-selected';
 	var attrIframeResizedTo = 'data-resize-iframe-to';
 
@@ -8178,33 +8178,33 @@
     </script>
   </head>
   <body>
-    <input id="psg-IsMenuHidden" type="checkbox" checked>
-    <div class="psg-Header">
-      <h1 class="psg-Header-heading"><a href="#top" title="back to top"><%= projectName %></a></h1>
-      <label for="psg-IsMenuHidden" class="psg-MenuButton">menu</label>
-      <label for="psg-IsMenuHidden" class="psg-hideMenu">hide menu</label>
+    <input id="gf-IsMenuHidden" type="checkbox" checked>
+    <div class="gf-Header">
+      <h1 class="gf-Header-heading"><a href="#top" title="back to top"><%= projectName %></a></h1>
+      <label for="gf-IsMenuHidden" class="gf-MenuButton">menu</label>
+      <label for="gf-IsMenuHidden" class="gf-hideMenu">hide menu</label>
     </div>
-    <nav class="psg-Menu"><a class="psg-Logo psg-Menu-header"><img src="http://postcss.github.io/postcss/logo.svg" alt="Philosopher’s stone, logo of PostCSS" class="psg-Logo-pic"></a>
-      <ul class="psg-Menu-itemgroup">
+    <nav class="gf-Menu"><a class="gf-Logo gf-Menu-header"><img src="http://postcss.github.io/postcss/logo.svg" alt="Philosopher’s stone, logo of PostCSS" class="gf-Logo-pic"></a>
+      <ul class="gf-Menu-itemgroup">
 <% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
-        <li class="psg-Menu-item"><a href="#color-palette" onclick="document.getElementById('psg-IsMenuHidden').click()" class="psg-Menu-link">Color Palette</a></li>
+        <li class="gf-Menu-item"><a href="#color-palette" onclick="document.getElementById('gf-IsMenuHidden').click()" class="gf-Menu-link">Color Palette</a></li>
 <% } %>
         <% maps.forEach(function (map) { %>
          <% if (map.link.title !== null) { %>
-        <li class="psg-Menu-item"><a href="#<%= map.link.id %>" onclick="document.getElementById('psg-IsMenuHidden').click()" class="psg-Menu-link"><%= map.link.title %></a></li>
+        <li class="gf-Menu-item"><a href="#<%= map.link.id %>" onclick="document.getElementById('gf-IsMenuHidden').click()" class="gf-Menu-link"><%= map.link.title %></a></li>
  <% } %>
         <% }) %>
       </ul>
 
     </nav>
-    <main class="psg-main">
+    <main class="gf-main">
       <div id="top"></div><% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
-      <section class="psg-Component">
-        <h2 id="color-palette" class="psg-Component-title">Color Palette</h2>
-        <ul class="psg-Component-content psg-Component-content--colorPalette">
+      <section class="gf-Component">
+        <h2 id="color-palette" class="gf-Component-title">Color Palette</h2>
+        <ul class="gf-Component-content gf-Component-content--colorPalette">
 <% colorPalette.forEach(function (palette) { %>
-          <li class="psg-Color"><code style="color: <%= palette.color %>" class="psg-Color-code"><%= palette.color %></code>
-            <data value="<%= palette.color %>" class="psg-Color-name"><%= palette.name %></data>
+          <li class="gf-Color"><code style="color: <%= palette.color %>" class="gf-Color-code"><%= palette.color %></code>
+            <data value="<%= palette.color %>" class="gf-Color-name"><%= palette.name %></data>
           </li>
 <% }) %>
         </ul>
@@ -8212,12 +8212,12 @@
 <% } %>
 <% maps.forEach(function (map) { %>
       <% if (map.link.title !== null) { %>
-      <section class="psg-Component">
-        <h2 id="<%= map.link.id %>" class="psg-Component-title"><%= map.link.title %></h2>
-        <div class="psg-Component-content"><%- map.html %></div>
+      <section class="gf-Component">
+        <h2 id="<%= map.link.id %>" class="gf-Component-title"><%= map.link.title %></h2>
+        <div class="gf-Component-content"><%- map.html %></div>
       </section><% } else { %>
-      <section class="psg-Component psg-Component--secondary">
-        <div class="psg-Component-content"><%- map.html %></div>
+      <section class="gf-Component gf-Component--secondary">
+        <div class="gf-Component-content"><%- map.html %></div>
       </section><% } %>
       <% }) %>
     </main>

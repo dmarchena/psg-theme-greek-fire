@@ -1,6 +1,6 @@
 import iframify from './iframify';
 
-const classNameBase = 'psg-ResponsiveSample';
+const classNameBase = 'gf-ResponsiveSample';
 const classNameStateSelected = 'is-selected';
 const attrIframeResizedTo = 'data-resize-iframe-to';
 

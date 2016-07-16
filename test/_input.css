@@ -27,7 +27,7 @@ Base style for `input` form controls.
 <input type="date" class="input input--date">
 ```
 
-<div class="psg-device-test">
+<div class="gf-device-test">
   <input type="date" class="input input--date">
 </div>
 */

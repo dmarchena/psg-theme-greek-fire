@@ -85,20 +85,20 @@ a:active {
   text-decoration: none;
 }
 
-#psg-IsMenuHidden {
+#gf-IsMenuHidden {
   display: none;
 }
 
-#psg-IsMenuHidden:checked ~ .psg-Menu {
+#gf-IsMenuHidden:checked ~ .gf-Menu {
   -webkit-transform: rotateX(-90deg);
           transform: rotateX(-90deg);
 }
 
-#psg-IsMenuHidden:checked + .psg-Header > .psg-hideMenu {
+#gf-IsMenuHidden:checked + .gf-Header > .gf-hideMenu {
   display: none;
 }
 
-.psg-hideMenu {
+.gf-hideMenu {
   display: block;
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -106,7 +106,7 @@ a:active {
   color: transparent;
 }
 
-.psg-MenuButton {
+.gf-MenuButton {
   display: inline-block;
 
   width: 5em;
@@ -123,7 +123,7 @@ a:active {
   font-size: 70%;
 }
 
-.psg-MenuButton::before {
+.gf-MenuButton::before {
   content: '';
   display: inline-block;
 
@@ -136,12 +136,12 @@ a:active {
   background-image: linear-gradient(0deg, black 20%, transparent 20%, transparent 40%, black 40%, black 60%, transparent 60%, transparent 80%, black 80%);
 }
 
-.psg-MenuButton:active::before {
+.gf-MenuButton:active::before {
   background-image: -webkit-linear-gradient(bottom, #dc3838 20%, transparent 20%, transparent 40%, #dc3838 40%, #dc3838 60%, transparent 60%, transparent 80%, #dc3838 80%);
   background-image: linear-gradient(0deg, #dc3838 20%, transparent 20%, transparent 40%, #dc3838 40%, #dc3838 60%, transparent 60%, transparent 80%, #dc3838 80%);
 }
 
-.psg-Header {
+.gf-Header {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -166,14 +166,14 @@ a:active {
   font-size: .9em;
 }
 
-.psg-Header:hover,
-#psg-IsMenuHidden:not(:checked) + .psg-Header {
+.gf-Header:hover,
+#gf-IsMenuHidden:not(:checked) + .gf-Header {
   padding-top: .8em;
   padding-bottom: .8em;
   font-size: 1em;
 }
 
-.psg-Header-heading {
+.gf-Header-heading {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -181,20 +181,20 @@ a:active {
 
   margin: 0;
 }
-.psg-Header-heading a:not(:active) {
+.gf-Header-heading a:not(:active) {
   color: inherit;
   text-decoration: inherit;
 }
 
-.psg-Logo {
+.gf-Logo {
   display: none;
 }
 
-.psg-Logo-pic {
+.gf-Logo-pic {
   margin-bottom: 2em;
 }
 
-.psg-Menu {
+.gf-Menu {
   position: absolute;
   left: 0;
   right: 0;
@@ -210,12 +210,12 @@ a:active {
           transform-origin: top;
 }
 
-.psg-Menu-header {
+.gf-Menu-header {
   text-align: center;
 }
 
-.psg-Menu-itemgroup,
-.psg-Menu-item {
+.gf-Menu-itemgroup,
+.gf-Menu-item {
   display: block;
 
   margin: 0;
@@ -224,13 +224,13 @@ a:active {
   list-style: none;
 }
 
-.psg-Menu-itemgroup {
+.gf-Menu-itemgroup {
   padding: .5em;
 
   background-color: #00b2ab;
 }
 
-.psg-Menu-link {
+.gf-Menu-link {
   display: block;
 
   margin: .3em 0;
@@ -243,18 +243,18 @@ a:active {
   color: #dc3838;
 }
 
-.psg-Menu-link:hover {
+.gf-Menu-link:hover {
   background-color: #00ccc4;
   border-bottom-color: #dc3838;
   color: #000;
 }
-.psg-Menu-link:active {
+.gf-Menu-link:active {
   background-color: #dc3838;
   border-bottom-color: #dc3838;
   color: #fff;
 }
 
-.psg-main {
+.gf-main {
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
@@ -265,19 +265,19 @@ a:active {
 }
 
 
-.psg-Component {
+.gf-Component {
   margin: 3em 2% 0;
   padding: 3em 4% 0;
 
   border-top: 2px solid #00b2ab;
 }
 
-.psg-Component:nth-child(2) {
+.gf-Component:nth-child(2) {
   border-top: none;
   margin-top: 0;
 }
 
-.psg-Component--secondary {
+.gf-Component--secondary {
   margin-left: 4%;
   margin-right: 4%;
   padding-left: 2%;
@@ -286,20 +286,20 @@ a:active {
   border-top-width: 1px;
 }
 
-.psg-Component-content {
+.gf-Component-content {
   padding: 0;
 }
 
-.psg-Component > :first-child,
-.psg-Component-content > :first-child {
+.gf-Component > :first-child,
+.gf-Component-content > :first-child {
   margin-top: 0;
 }
 
-.psg-Component-content > :last-child {
+.gf-Component-content > :last-child {
   margin-bottom: 0;
 }
 
-/*.psg-Component-content--colorPalette {
+/*.gf-Component-content--colorPalette {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -307,7 +307,7 @@ a:active {
   padding: 0;
 }*/
 
-.psg-Color {
+.gf-Color {
   display: inline-block;
 
   width: 15%;
@@ -318,7 +318,7 @@ a:active {
   vertical-align: top;
 }
 
-.psg-Color-code {
+.gf-Color-code {
   display: block;
 
   background-color: currentColor;
@@ -327,14 +327,14 @@ a:active {
   font-size: 0;
 }
 
-.psg-Color-code::before {
+.gf-Color-code::before {
   content: '';
   display: block;
 
   padding-top: 100%;
 }
 
-.psg-Color-name {
+.gf-Color-name {
   display: block;
 
   margin-top: 1em;
@@ -342,12 +342,12 @@ a:active {
   text-align: center;
 }
 
-.psg-Color-name::before {
+.gf-Color-name::before {
   content: '--';
   display: inline;
 }
 
-.psg-Color-name::after {
+.gf-Color-name::after {
   content: attr(value);
   display: block;
 
@@ -356,13 +356,13 @@ a:active {
   font-style: italic;
 }
 
-.psg-ResponsiveSample {
+.gf-ResponsiveSample {
   margin: 2em 0 1em;
 
   text-align: right;
 }
 
-.psg-ResponsiveSample-header {
+.gf-ResponsiveSample-header {
   display: inline-block;
 
   border: 1px solid #00b2ab;
@@ -370,7 +370,7 @@ a:active {
   border-radius: .3em .3em 0 0;
 }
 
-.psg-ResponsiveSample-tab {
+.gf-ResponsiveSample-tab {
   display: inline-block;
 
   padding: .6em 1.2em;
@@ -386,17 +386,17 @@ a:active {
   font-size: .9em;
 }
 
-.psg-ResponsiveSample-tab:not(:last-child) {
+.gf-ResponsiveSample-tab:not(:last-child) {
   border-right: 1px solid #00b2ab;
 }
 
-.psg-ResponsiveSample-tab:hover:not(:active) {
+.gf-ResponsiveSample-tab:hover:not(:active) {
   background: #00ccc4;
   color: #000;
 }
 
-.psg-ResponsiveSample-tab.is-selected,
-.psg-ResponsiveSample-tab.is-selected:hover {
+.gf-ResponsiveSample-tab.is-selected,
+.gf-ResponsiveSample-tab.is-selected:hover {
   cursor: default;
 
   background: #00b2ab;
@@ -404,7 +404,7 @@ a:active {
   color: #000;
 }
 
-.psg-ResponsiveSample-body {
+.gf-ResponsiveSample-body {
   overflow-x: auto;
 
   padding: 1em;
@@ -418,7 +418,7 @@ a:active {
     repeating-linear-gradient(135deg, transparent, transparent 14px, #ddd 14px, #ddd 17px, transparent 17px);
 }
 
-.psg-ResponsiveSample-iframe {
+.gf-ResponsiveSample-iframe {
   display: block;
   overflow-y: auto;
 
@@ -435,6 +435,6 @@ a:active {
   box-shadow: 0 0 1em 3px #f5f5f5;
 }
 
-.psg-ResponsiveSample-iframe--100\% {
+.gf-ResponsiveSample-iframe--100\% {
   box-sizing: border-box;
 }

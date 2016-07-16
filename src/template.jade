@@ -12,42 +12,42 @@ html(lang='es')
 
   body
 
-    input#psg-IsMenuHidden(type="checkbox", checked)
-    .psg-Header
-      h1.psg-Header-heading
+    input#gf-IsMenuHidden(type="checkbox", checked)
+    .gf-Header
+      h1.gf-Header-heading
         a(href="#top", title="back to top") <%= projectName %>
-      label.psg-MenuButton(for="psg-IsMenuHidden") menu
-      label.psg-hideMenu(for="psg-IsMenuHidden") hide menu
-    nav.psg-Menu
-      a.psg-Logo.psg-Menu-header
-        img.psg-Logo-pic(src="http://postcss.github.io/postcss/logo.svg", alt="Philosopher’s stone, logo of PostCSS")
-      ul.psg-Menu-itemgroup
+      label.gf-MenuButton(for="gf-IsMenuHidden") menu
+      label.gf-hideMenu(for="gf-IsMenuHidden") hide menu
+    nav.gf-Menu
+      a.gf-Logo.gf-Menu-header
+        img.gf-Logo-pic(src="http://postcss.github.io/postcss/logo.svg", alt="Philosopher’s stone, logo of PostCSS")
+      ul.gf-Menu-itemgroup
         ='\n'
         |<% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
-        li.psg-Menu-item
-          a(href="#color-palette", onclick="document.getElementById('psg-IsMenuHidden').click()").psg-Menu-link Color Palette
+        li.gf-Menu-item
+          a(href="#color-palette", onclick="document.getElementById('gf-IsMenuHidden').click()").gf-Menu-link Color Palette
         ='\n'
         |<% } %>
         |<% maps.forEach(function (map) { %>
         |  <% if (map.link.title !== null) { %>
-        li.psg-Menu-item
-          a(href!="#<%= map.link.id %>", onclick="document.getElementById('psg-IsMenuHidden').click()").psg-Menu-link <%= map.link.title %>
+        li.gf-Menu-item
+          a(href!="#<%= map.link.id %>", onclick="document.getElementById('gf-IsMenuHidden').click()").gf-Menu-link <%= map.link.title %>
         ='\n'
         |  <% } %>
         |<% }) %>
       ='\n'
-    main.psg-main
+    main.gf-main
       div#top
       |<% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
-      section.psg-Component
-        h2.psg-Component-title#color-palette Color Palette
-        ul.psg-Component-content.psg-Component-content--colorPalette
+      section.gf-Component
+        h2.gf-Component-title#color-palette Color Palette
+        ul.gf-Component-content.gf-Component-content--colorPalette
           ='\n'
           |<% colorPalette.forEach(function (palette) { %>
-          li.psg-Color
-            code.psg-Color-code(style!="color: <%= palette.color %>")
+          li.gf-Color
+            code.gf-Color-code(style!="color: <%= palette.color %>")
               |<%= palette.color %>
-            data.psg-Color-name(value!="<%= palette.color %>")
+            data.gf-Color-name(value!="<%= palette.color %>")
               |<%= palette.name %>
           ='\n'
           |<% }) %>
@@ -56,12 +56,12 @@ html(lang='es')
       ='\n'
       |<% maps.forEach(function (map) { %>
       |<% if (map.link.title !== null) { %>
-      section.psg-Component
-        h2.psg-Component-title(id!="<%= map.link.id %>") <%= map.link.title %>
-        .psg-Component-content <%- map.html %>
+      section.gf-Component
+        h2.gf-Component-title(id!="<%= map.link.id %>") <%= map.link.title %>
+        .gf-Component-content <%- map.html %>
       |<% } else { %>
-      section.psg-Component.psg-Component--secondary
-        .psg-Component-content <%- map.html %>
+      section.gf-Component.gf-Component--secondary
+        .gf-Component-content <%- map.html %>
       |<% } %>
       |<% }) %>
 

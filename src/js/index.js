@@ -44,7 +44,7 @@ const options = {
   styleSelector: '#processedcss',
 }
 ready(() => {
-  [].slice.call(document.querySelectorAll('.psg-device-test')).map(sample => {
+  [].slice.call(document.querySelectorAll('.gf-device-test')).map(sample => {
     let opts = options;
     if (sample.getAttribute('data-style') !== null) {
       opts = Object.assign({}, opts, { style: sample.getAttribute('data-style') });
