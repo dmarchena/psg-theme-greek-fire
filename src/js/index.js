@@ -1,6 +1,8 @@
 import 'babel-polyfill';
+import menu from './menu';
 import ready from './ready';
 import responsiveSandbox from './responsive-sandbox';
+import trackFocus from './track-focus';
 
 // const breakpoints = ['480px', '768px', '1024px'];
 const options = {
@@ -44,6 +46,7 @@ const options = {
   styleSelector: '#processedcss',
 }
 ready(() => {
+  trackFocus();
   [].slice.call(document.querySelectorAll('.gf-device-test')).map(sample => {
     let opts = options;
     if (sample.getAttribute('data-style') !== null) {

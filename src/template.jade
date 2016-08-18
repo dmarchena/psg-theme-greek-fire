@@ -16,22 +16,22 @@ html(lang='es')
     .gf-Header
       h1.gf-Header-heading
         a(href="#top", title="back to top") <%= projectName %>
-      label.gf-MenuButton(for="gf-IsMenuHidden") menu
+      label.gf-MenuButton(for="gf-IsMenuHidden",role="button",aria-haspopup="true",tabindex="0") menu
       label.gf-hideMenu(for="gf-IsMenuHidden") hide menu
     nav.gf-Menu
       a.gf-Logo.gf-Menu-header
         img.gf-Logo-pic(src="http://postcss.github.io/postcss/logo.svg", alt="Philosopher’s stone, logo of PostCSS")
-      ul.gf-Menu-itemgroup
+      ul.gf-Menu-itemgroup(role="menu")
         ='\n'
         |<% if (Array.isArray(colorPalette) && colorPalette.length !== 0) { %>
         li.gf-Menu-item
-          a(href="#color-palette", onclick="document.getElementById('gf-IsMenuHidden').click()").gf-Menu-link Color Palette
+          a(href="#color-palette",onclick="document.getElementById('gf-IsMenuHidden').click()",tabindex="-1",role="menuitem").gf-Menu-link Color Palette
         ='\n'
         |<% } %>
         |<% maps.forEach(function (map) { %>
         |  <% if (map.link.title !== null) { %>
         li.gf-Menu-item
-          a(href!="#<%= map.link.id %>", onclick="document.getElementById('gf-IsMenuHidden').click()").gf-Menu-link <%= map.link.title %>
+          a(href!="#<%= map.link.id %>",onclick="document.getElementById('gf-IsMenuHidden').click()",tabindex="-1",role="menuitem").gf-Menu-link <%= map.link.title %>
         ='\n'
         |  <% } %>
         |<% }) %>

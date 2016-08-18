@@ -3,6 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
+    'babel-polyfill', 
     './src/js/index.js'
   ],
   output: {
@@ -13,7 +14,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
           cacheDirectory: true,

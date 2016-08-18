@@ -1,7 +1,8 @@
+import { handleKeyboardNavigationBetweenElementFromCollection } from './keyboard-a11y';
 import iframify from './iframify';
 
 const classNameBase = 'gf-ResponsiveSample';
-const classNameStateSelected = 'is-selected';
+const classNameStatePressed = 'is-pressed';
 const attrIframeResizedTo = 'data-resize-iframe-to';
 
 
@@ -13,7 +14,7 @@ export default function responsiveSandbox(elem, options) {
   options = Object.assign({}, defaults, options);
 
   const sandbox = {
-    tabs: [],
+    controls: [],
     iframe: undefined,
     breakpoints: getFormattedBreakpointArray(options.breakpoints)
   }
@@ -53,8 +54,9 @@ export default function responsiveSandbox(elem, options) {
     let sandboxElem = document.createElement('div');
     sandboxElem.className = classNameBase;
 
-    let sandboxHeader = document.createElement('div');
-    sandboxHeader.className = classNameBase + '-header';
+    let sandboxHeader = document.createElement('ul');
+    sandboxHeader.className = classNameBase + '-toolbar';
+    sandboxHeader.setAttribute('role', 'toolbar');
     sandboxHeader = sandboxElem.appendChild(sandboxHeader);
 
     let sandboxBody = document.createElement('div');
@@ -66,11 +68,12 @@ export default function responsiveSandbox(elem, options) {
 
     sandbox.iframe = wrapElement(elem);
 
-    sandbox.tabs = sandbox.breakpoints.map(breakpoint => {
-      return sandboxHeader.appendChild(createTabElementForBreakpoint(breakpoint));
+    sandbox.controls = sandbox.breakpoints.map(breakpoint => {
+      return sandboxHeader.appendChild(createControlForBreakpoint(breakpoint));
     });
+    handleKeyboardNavigationBetweenElementFromCollection(sandboxHeader.children, { direction: 'horizontal' });
 
-    switchToTab(sandbox.tabs
+    pressControl(sandbox.controls
       .reduce((acc, curr) => {
         return curr;
       }));
@@ -85,8 +88,8 @@ export default function responsiveSandbox(elem, options) {
     });
     ['mouseup', 'mouseout', 'mousemove'].forEach(eventName => iframe.addEventListener(eventName,
       function onIframeCSSResize(event) {
-        updateTabsState(tab => {
-          return tab.getAttribute(attrIframeResizedTo) === event.target.style.width;
+        updateControlsState(control => {
+          return control.getAttribute(attrIframeResizedTo) === event.target.style.width;
         });
       }
     ));
@@ -101,40 +104,46 @@ export default function responsiveSandbox(elem, options) {
     sandbox.iframe.style.transition = '';
   }
 
-  function createTabElementForBreakpoint(breakpoint) {
-    let tab = document.createElement('a');
-    tab.className = classNameBase + '-tab';
-    tab.innerHTML = breakpoint.name;
-    tab.setAttribute(attrIframeResizedTo, breakpoint.width);
-    tab.addEventListener('click', e => {
+  function createControlForBreakpoint(breakpoint) {
+    let control = document.createElement('li');
+    control.className = classNameBase + '-control';
+    control.setAttribute('role', 'button');
+    control.setAttribute('tabindex', '-1');
+    control.innerHTML = breakpoint.name;
+    control.setAttribute(attrIframeResizedTo, breakpoint.width);
+    control.addEventListener('click', e => {
       e.preventDefault();
-      switchToTab(e.target, breakpoint);
+      pressControl(e.target, breakpoint);
     });
-    return tab;
+    return control;
   }
 
-  function switchToTab(tabElem, tabBreakpoint) {
-    if (typeof tabBreakpoint === 'undefined') {
-      tabBreakpoint = sandbox.breakpoints.reduce((acc, curr) => {
-        return (curr.width === tabElem.getAttribute(attrIframeResizedTo)) ? curr : acc;
+  function pressControl(controlElem, controlBreakpoint) {
+    if (typeof controlBreakpoint === 'undefined') {
+      controlBreakpoint = sandbox.breakpoints.reduce((acc, curr) => {
+        return (curr.width === controlElem.getAttribute(attrIframeResizedTo)) ? curr : acc;
       });
     }
-    resizeIframe(tabBreakpoint);
-    updateTabsState(tab => {
-      return tab.isEqualNode(tabElem);
-    })
+    resizeIframe(controlBreakpoint);
+    updateControlsState(control => {
+      return control.isEqualNode(controlElem);
+    });
   }
 
-  function updateTabsState(fnIsTabSelected) {
-    sandbox.tabs
-      .map(tab => {
-        tab.classList.remove(classNameStateSelected);
-        return tab;
+  function updateControlsState(fnIsControlPressed) {
+    sandbox.controls
+      .map(control => {
+        control.classList.remove(classNameStatePressed);
+        control.setAttribute('aria-pressed', 'false');
+        control.setAttribute('tabindex', '-1');
+        return control;
       })
-      .filter(fnIsTabSelected)
-      .map(tab => {
-        tab.classList.add(classNameStateSelected);
-        return tab;
+      .filter(fnIsControlPressed)
+      .map(control => {
+        control.classList.add(classNameStatePressed);
+        control.setAttribute('aria-pressed', 'true');
+        control.setAttribute('tabindex', '0');
+        return control;
       });
   }
 
