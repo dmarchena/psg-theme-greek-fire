@@ -29,6 +29,10 @@ html {
   box-sizing: inherit;
 }
 
+:focus {
+  outline-color: #dc3838;
+}
+
 body {
   display: -webkit-box;
   display: -webkit-flex;
@@ -136,6 +140,7 @@ a:active {
   background-image: linear-gradient(0deg, black 20%, transparent 20%, transparent 40%, black 40%, black 60%, transparent 60%, transparent 80%, black 80%);
 }
 
+.gf-MenuButton:focus::before,
 .gf-MenuButton:active::before {
   background-image: -webkit-linear-gradient(bottom, #dc3838 20%, transparent 20%, transparent 40%, #dc3838 40%, #dc3838 60%, transparent 60%, transparent 80%, #dc3838 80%);
   background-image: linear-gradient(0deg, #dc3838 20%, transparent 20%, transparent 40%, #dc3838 40%, #dc3838 60%, transparent 60%, transparent 80%, #dc3838 80%);
@@ -243,10 +248,12 @@ a:active {
   color: #dc3838;
 }
 
-.gf-Menu-link:hover {
+.gf-Menu-link:hover,
+.gf-Menu-link:focus {
   background-color: #00ccc4;
   border-bottom-color: #dc3838;
   color: #000;
+  outline: none;
 }
 .gf-Menu-link:active {
   background-color: #dc3838;
@@ -362,15 +369,18 @@ a:active {
   text-align: right;
 }
 
-.gf-ResponsiveSample-header {
+.gf-ResponsiveSample-toolbar {
   display: inline-block;
 
+  margin: 0;
+  padding: 0;
+list-style: none;
   border: 1px solid #00b2ab;
   border-bottom: none;
   border-radius: .3em .3em 0 0;
 }
 
-.gf-ResponsiveSample-tab {
+.gf-ResponsiveSample-control {
   display: inline-block;
 
   padding: .6em 1.2em;
@@ -386,22 +396,26 @@ a:active {
   font-size: .9em;
 }
 
-.gf-ResponsiveSample-tab:not(:last-child) {
+.gf-ResponsiveSample-control:not(:last-child) {
   border-right: 1px solid #00b2ab;
 }
 
-.gf-ResponsiveSample-tab:hover:not(:active) {
+.gf-ResponsiveSample-control:hover:not(:active) {
   background: #00ccc4;
   color: #000;
 }
 
-.gf-ResponsiveSample-tab.is-selected,
-.gf-ResponsiveSample-tab.is-selected:hover {
+.gf-ResponsiveSample-control.is-pressed,
+.gf-ResponsiveSample-control.is-pressed:hover {
   cursor: default;
 
   background: #00b2ab;
   border-bottom-color: currentColor;
   color: #000;
+}
+
+.gf-ResponsiveSample-control.focus--mouse:focus {
+  outline: none;
 }
 
 .gf-ResponsiveSample-body {
