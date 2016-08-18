@@ -1,6 +1,8 @@
 # psg-theme-greek-fire
 
-TODO: Please write description.
+## Install
+
+`$ npm install psg-theme-greek-fire`
 
 ## Theme
 
