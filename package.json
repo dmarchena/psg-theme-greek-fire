@@ -12,19 +12,19 @@
     "type": "git",
     "url": "https://github.com/dmarchena/psg-theme-greek-fire.git"
   },
-  "author" : { 
-    "name" : "David Marchena",
-    "url" : "https://twitter.com/dmarchena"
+  "author": {
+    "name": "David Marchena",
+    "url": "https://twitter.com/dmarchena"
   },
   "scripts": {
     "build": "npm run build:css && npm run build:js && npm run build:ejs",
     "build:css": "postcss -u postcss-cssnext -o style.css src/css/index.css",
     "build:ejs": "jade --extension ejs --out . --path src --pretty src/template.jade",
-    "build:js": "webpack",
+    "build:js": "webpack -p",
     "postbuild": "rm -r ./src/.tmp",
     "pretest": "npm run build && npm run test:clean",
     "test": "npm run test:tape",
-    "test:clean": "rm test/output.html",
+    "test:clean": "rm -f test/output.html",
     "test:tape": "tape test/index.js | tap-spec",
     "test:manual": "postcss -u postcss-import -u postcss-cssnext --postcss-cssnext.features.customProperties.preserve 'true' -u postcss-style-guide --postcss-style-guide.dest 'test/output.html' --postcss-style-guide.project 'Greek Fire!' --postcss-style-guide.themePath '.' test/index.css",
     "posttest": "mkdir -p docs && cp test/output.html docs/demo.html"
