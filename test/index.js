@@ -2,6 +2,13 @@ var fs = require('fs');
 var path = require('path');
 var test = require('tape');
 var postcss = require('postcss');
+var cssnextOpts = {
+  features: {
+    customProperties: {
+      preserve: true
+    }
+  }
+};
 
 test('exists template.ejs', function (t) {
     var actual = fs.existsSync('template.ejs')
@@ -35,7 +42,6 @@ test('integration test: exists an output', function (t) {
       }),
       require('postcss-style-guide')({
         project: 'Greek Fire!',
-        src: src,
         dest: dest,
         themePath: cwd
       })
