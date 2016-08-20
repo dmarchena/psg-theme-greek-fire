@@ -4,7 +4,7 @@ import ready from './ready';
 ready(() => {
   const checkboxIsMenuHidden = document.getElementById('gf-IsMenuHidden');
   const menuButton = document.querySelector('.gf-MenuButton');
-  const menu = document.getElementsByClassName('gf-Menu');
+  //const menu = document.getElementsByClassName('gf-Menu');
   const menuItems = [].slice.call(document.querySelectorAll('.gf-Menu-link'));
   const firstMenuItem = menuItems.reduce((acc, curr, index) => {
     return (index === 0) ? curr : acc;
