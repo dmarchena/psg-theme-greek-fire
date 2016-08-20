@@ -1,4 +1,4 @@
-# psg-theme-greek-fire ![Travis CI status image](https://travis-ci.org/dmarchena/psg-theme-greek-fire.svg?branch=master)
+# psg-theme-greek-fire [![Travis CI status image](https://travis-ci.org/dmarchena/psg-theme-greek-fire.svg?branch=master)](https://travis-ci.org/dmarchena/psg-theme-greek-fire)
 
 ## Install
 
