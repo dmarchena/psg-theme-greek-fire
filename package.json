@@ -12,8 +12,11 @@
     "build:ejs": "jade --extension ejs --out . --path src --pretty src/template.jade",
     "build:js": "webpack",
     "postbuild": "rm -r ./src/.tmp",
-    "pretest": "npm run build",
-    "test": "postcss -u postcss-import -u postcss-cssnext --postcss-cssnext.features.customProperties.preserve 'true' -u postcss-style-guide --postcss-style-guide.dest 'test/output.html' --postcss-style-guide.project 'Greek Fire!' --postcss-style-guide.themePath '.' test/index.css"
+    "pretest": "npm run build && npm run test:clean",
+    "test": "npm run test:tape",
+    "test:clean": "rm test/output.html",
+    "test:tape": "tape test | tap-spec",
+    "test:manual": "postcss -u postcss-import -u postcss-cssnext --postcss-cssnext.features.customProperties.preserve 'true' -u postcss-style-guide --postcss-style-guide.dest 'test/output.html' --postcss-style-guide.project 'Greek Fire!' --postcss-style-guide.themePath '.' test/index.css"
   },
   "dependencies": {},
   "devDependencies": {
@@ -27,6 +30,8 @@
     "postcss-cssnext": "^2.5.2",
     "postcss-import": "^8.1.2",
     "postcss-style-guide": "^0.13.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0",
     "webpack": "^1.13.0"
   }
 }
