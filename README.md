@@ -87,6 +87,10 @@ Each iframe will use **only your stylesheet by default**. However, you can add e
 
 ![Image of psg-theme-aqua](./screenshot.png)
 
+## Demo
+
+You can try it on this [demo](https://dmarchena.github.io/psg-theme-greek-fire/demo.html)
+
 ## License
 
 MIT © 2016 David Marchena
