@@ -4,9 +4,11 @@
 
 `$ npm install psg-theme-greek-fire`
 
+## Theme
+
+![Image of psg-theme-aqua](./screenshot.png)
 
 ## Usage
-
 
 ### Dinamic device test
 
@@ -81,11 +83,6 @@ Each iframe will use **only your stylesheet by default**. However, you can add e
       </div>
     </div>
     */
-
-
-## Theme
-
-![Image of psg-theme-aqua](./screenshot.png)
 
 ## Demo
 
