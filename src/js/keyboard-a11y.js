@@ -42,8 +42,6 @@ function handleKeyboardNavigationBetweenElementFromCollection(collection, option
     }, null);
     item.addEventListener('keydown', e => {
       const key = window.event ? e.keyCode : e.which;
-      let sibling = null;
-
       switch (key) {
         case KEY_PREV:
           focusout(item);
