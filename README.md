@@ -4,13 +4,13 @@
 
 `$ npm install psg-theme-greek-fire`
 
-## Usage
 
+## Usage
 
 
 ### Dinamic device test
 
-If you want to test your patterns on different resolutions wrap your sample in a `div` with class `gf-device-test` 
+If you want to test a component on different resolutions wrap its HTML in a `div` with class `gf-device-test` 
 
 ```html
 <div class="gf-device-test">
@@ -18,7 +18,7 @@ If you want to test your patterns on different resolutions wrap your sample in a
 </div>
 ```
 
-Then, the theme will include each pattern inside an isolated iframe, which will be accompanied by a toolbar with the following options in order to resize it:
+Then, the theme will include that HTML inside an isolated iframe, which will be accompanied by a toolbar with the following options in order to resize it:
 
 * **mobile**
   - width: 375px
@@ -42,7 +42,7 @@ Then, the theme will include each pattern inside an isolated iframe, which will 
   - width: 100%
 
 
-#### Adding additional styles to an iframe
+#### Include additional styles into an iframe
 
 Each iframe will use **only your stylesheet by default**. However, you can add extra styles using the attribute `data-style`:
 
