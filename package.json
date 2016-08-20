@@ -27,7 +27,7 @@
     "test:clean": "rm test/output.html",
     "test:tape": "tape test/index.js | tap-spec",
     "test:manual": "postcss -u postcss-import -u postcss-cssnext --postcss-cssnext.features.customProperties.preserve 'true' -u postcss-style-guide --postcss-style-guide.dest 'test/output.html' --postcss-style-guide.project 'Greek Fire!' --postcss-style-guide.themePath '.' test/index.css",
-    "posttest": "mkdir -p docs && cp test/output.html docs/sample.html"
+    "posttest": "mkdir -p docs && cp test/output.html docs/demo.html"
   },
   "dependencies": {},
   "devDependencies": {
